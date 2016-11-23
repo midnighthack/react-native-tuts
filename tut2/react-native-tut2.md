@@ -150,4 +150,47 @@ Can change inside Component? | No | Yes
 Can set initial value for child Components? | Yes | Yes
 Can change in child Components? | Yes | No
 
+# [Bonus: Handling Text Input](https://facebook.github.io/react-native/docs/handling-text-input.html)
+
+Thực hành thêm một chút về `state` với ví dụ về xử lý Input.
+
+```javascript
+import React, { Component } from 'react';
+import { AppRegistry, Text, TextInput, View } from 'react-native';
+
+class PizzaTranslator extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {text: ''};
+  }
+
+  render() {
+    return (
+      <View style={{padding: 10}}>
+        <TextInput
+          style={{height: 40}}
+          placeholder="Type here to translate!"
+          onChangeText={(text) => this.setState({text})}
+        />
+        <Text style={{padding: 10, fontSize: 42}}>
+          {this.state.text.split(' ').map((word) => word && '🍕').join(' ')}
+        </Text>
+      </View>
+    );
+  }
+}
+
+AppRegistry.registerComponent('PizzaTranslator', () => PizzaTranslator);
+```
+
+Trong đó:
+- Sự kiện `onChangeText` sẽ được gọi khi có input và chạy function bên trong.
+- Function `(text) => this.setState({text})` sẽ thực hiện lời gọi để set giá trị mới cho state.
+
+Trong ví dụ này `text` được lưu vào state vì nó sẽ thay đổi liên tục theo input của người sử dụng.
+
+Tham khảo thêm về `Form` và `TextInput`:
+- [React docs on controlled components](https://facebook.github.io/react/docs/forms.html)
+- [TextInput reference](https://facebook.github.io/react-native/docs/textinput.html)
+
 ## Good luck & Have fun
