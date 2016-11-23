@@ -40,6 +40,7 @@ AppRegistry.registerComponent('Bananas', () => Bananas);
 - Lưu ý:
   + Việc implement hiển thị được Component `Image` trong React xử lý.
   + Các thư viện thường cung cấp sẵn các Component tương tự `Image` của React Native với cách sử dụng tương tự.
+  + Với `Image`, khi sử dụng `uri` thì bạn phải define `width & height`, còn dùng `source={require('./images/img.png')}` thì không cần. Vì `uri` là ảnh từ phía `http server`, nên khi bundle, `react-native` không hiểu được, còn `source={require('./images/img.png')}` thì ảnh ở trong app folder nên react-native có thể optimize được.
 
 ## 2. Tự viết Component sử dụng Props
 
