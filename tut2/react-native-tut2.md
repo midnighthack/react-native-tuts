@@ -21,7 +21,7 @@ import { AppRegistry, Image } from 'react-native';
 
 class Bananas extends Component {
   render() {
-    let pic = {
+    const pic = {
       uri: 'https://upload.wikimedia.org/wikipedia/commons/d/de/Bananavarieties.jpg'
     };
     return (
@@ -103,7 +103,7 @@ class Blink extends Component {
   }
 
   render() {
-    let display = this.state.showText ? this.props.text : ' ';
+    const display = this.state.showText ? this.props.text : ' ';
     return (
       <Text>{display}</Text>
     );
