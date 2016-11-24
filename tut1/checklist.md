@@ -2,4 +2,4 @@
 [x] Hoàng Tuấn Anh
 [x] Đoàn Nguyễn Hải Hoàng
 [x] Hà Công Linh
-
+[x] Nguyễn Trọng Hiệp
